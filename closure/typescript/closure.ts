@@ -27,13 +27,13 @@ const players: Player[] = [
   },
 ]
 
-const distinctBy = (property) => {
+const distinctBy = (property: string) => {
   const set = new Set()
-  return (player) =>
+  return (player: Player) =>
     set.has(player[property]) ? false : !!set.add(player[property])
 }
 
-const nations = players
+const nations: string[] = players
   .filter(distinctBy('nation'))
   .map((player) => player.nation)
 
